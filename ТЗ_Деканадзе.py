@@ -10,6 +10,7 @@ config = {
         "geoip": True
     }
 
+
 def finding_something_in_ozon(query: str, sku_to_search: int):
     with camoufox.Camoufox(**config, humanize=True) as browser:
         products = set()
@@ -18,7 +19,6 @@ def finding_something_in_ozon(query: str, sku_to_search: int):
         page.wait_for_timeout(5000)
         page.evaluate("document.body.style.zoom = '0.1'")
         page.wait_for_timeout(20000)
-        print(page.locator('div[data-widget="infiniteVirtualPaginator"] div[class^="tile-root"]').count())
         for j in page.locator('div[data-widget="infiniteVirtualPaginator"] div[class^="tile-root"]').all():
             if j.text_content() in products: continue
             products.add(j.text_content())
@@ -39,11 +39,15 @@ def finding_something_in_ozon(query: str, sku_to_search: int):
             if len(products) == 100: break
     return "not_found"
 
+
 if __name__ == "__main__":
     print(finding_something_in_ozon('блейк крауч', 3260207120))
     time.sleep(30)
+
     print(finding_something_in_ozon('блейк крауч', 1382454071))
     time.sleep(30)
+
     print(finding_something_in_ozon('ноутбук msi rtx 5050', 3648438979))
     time.sleep(30)
+
     print(finding_something_in_ozon('nintendo switch 2', 2316104394))
