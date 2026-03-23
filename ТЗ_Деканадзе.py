@@ -45,3 +45,5 @@ if __name__ == "__main__":
     print(finding_something_in_ozon('блейк крауч', 1382454071))
     time.sleep(30)
     print(finding_something_in_ozon('ноутбук msi rtx 5050', 3648438979))
+    time.sleep(30)
+    print(finding_something_in_ozon('nintendo switch 2', 2316104394))
