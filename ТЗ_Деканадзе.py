@@ -27,6 +27,8 @@ def finding_something_in_ozon(query: str, sku_to_search: int):
             sku = 0
             if match:
                 sku = match.group(1)
+            else:
+                continue
             if int(sku) == sku_to_search:
                 return json.dumps({
                     "query": query,
