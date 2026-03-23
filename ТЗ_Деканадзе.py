@@ -11,7 +11,7 @@ config = {
     }
 
 
-def finding_something_in_ozon(query: str, sku_to_search: int):
+def finding_something_in_ozon(query: str, sku_to_search: int) -> str:
     with camoufox.Camoufox(**config, humanize=True) as browser:
         products = set()
         page = browser.new_page()
@@ -46,7 +46,7 @@ def finding_something_in_ozon(query: str, sku_to_search: int):
 if __name__ == "__main__":
     print(finding_something_in_ozon('блейк крауч', 3260207120))
     time.sleep(30)
-
+    
     print(finding_something_in_ozon('блейк крауч', 1382454071))
     time.sleep(30)
 
