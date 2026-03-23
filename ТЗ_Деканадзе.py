@@ -39,6 +39,7 @@ def finding_something_in_ozon(query: str, sku_to_search: int):
                     "timestamp": datetime.now().isoformat()
                     }, indent=4, ensure_ascii=False)
             if len(products) == 100: break
+        browser.close()
     return "not_found"
 
 
