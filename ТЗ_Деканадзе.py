@@ -5,7 +5,7 @@ import re
 import camoufox
 
 config = {
-        "headless": False,    
+        "headless": True,    
         "os": "windows",     
         "geoip": True
     }
