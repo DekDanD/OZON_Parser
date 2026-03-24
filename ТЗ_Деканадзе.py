@@ -32,7 +32,7 @@ def finding_something_in_ozon(query: str, sku_to_search: int) -> str:
             if int(sku) == sku_to_search:
                 return json.dumps({
                     "query": query,
-                    "sku": sku,
+                    "sku": int(sku),
                     "position": len(products),
                     "page": 1,
                     "total_checked": 100,
